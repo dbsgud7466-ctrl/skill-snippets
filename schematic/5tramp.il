@@ -49,10 +49,10 @@ procedure( make5TRamp()
     ;; [3] Place instances
     ;;----------------------------------------------------------
     M1 = schCreateInst(cv nmosMaster "M1" list(0.0  0.0) "R0")
-    M2 = schCreateInst(cv nmosMaster "M2" list(4.0  0.0) "R0")
-    M3 = schCreateInst(cv pmosMaster "M3" list(0.0  4.0) "MY")
-    M4 = schCreateInst(cv pmosMaster "M4" list(4.0  4.0) "MY")
-    M5 = schCreateInst(cv nmosMaster "M5" list(2.0 -3.0) "R0")
+    M2 = schCreateInst(cv nmosMaster "M2" list(3.0  0.0) "MY")
+    M3 = schCreateInst(cv pmosMaster "M3" list(0.5  2.0) "MY")
+    M4 = schCreateInst(cv pmosMaster "M4" list(2.5  2.0) "R0")
+    M5 = schCreateInst(cv nmosMaster "M5" list(1.25 -1.5) "R0")
     printf("OK  [2/4] All 5 instances placed\n")
 
     ;;----------------------------------------------------------
@@ -71,11 +71,11 @@ procedure( make5TRamp()
     ;;     schCreatePin(cv master name direction offSheet origin orientation powerSens groundSens sigType)
     ;;----------------------------------------------------------
     schCreatePin(cv ipinMaster "INP"   "input"  nil list(-3.0  0.5) "R0" nil nil "signal")
-    schCreatePin(cv ipinMaster "INN"   "input"  nil list(-3.0 -0.5) "R0" nil nil "signal")
-    schCreatePin(cv ipinMaster "VBIAS" "input"  nil list(-3.0 -3.0) "R0" nil nil "signal")
-    schCreatePin(cv opinMaster "OUT"   "output" nil list( 7.0  2.0) "R0" nil nil "signal")
-    schCreatePin(cv ipinMaster "VDD"   "input"  nil list( 2.0  7.0) "R0" nil nil "power")
-    schCreatePin(cv ipinMaster "VSS"   "input"  nil list( 2.0 -5.0) "R0" nil nil "ground")
+    schCreatePin(cv ipinMaster "INN"   "input"  nil list(-3.0 0.25) "R0" nil nil "signal")
+    schCreatePin(cv ipinMaster "VBIAS" "input"  nil list(-3.0 0) "R0" nil nil "signal")
+    schCreatePin(cv opinMaster "OUT"   "output" nil list( -3.125  -0.25) "R0" nil nil "signal")
+    schCreatePin(cv ipinMaster "VDD"   "input"  nil list( -3.0  -0.5) "R0" nil nil "power")
+    schCreatePin(cv ipinMaster "VSS"   "input"  nil list( -3.0 -0.75) "R0" nil nil "ground")
     printf("OK  [4/4] Pins created\n")
 
     ;;----------------------------------------------------------
